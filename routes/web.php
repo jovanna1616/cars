@@ -20,12 +20,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('/about', function () {
+Route::get('/about', ['as' => 'about', 'uses' => function () {
 
 	$about_title = 'About us';
 
     return view('about', compact('about_title'));
-});
+}]);
 
 
 Route::get('/cars', ['as' => 'all-cars', 'uses' => 'CarsController@index']);
