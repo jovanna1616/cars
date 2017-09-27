@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CarsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +26,6 @@ Route::get('/about', function () {
 
     return view('about', compact('about_title'));
 });
+
+
+Route::get('/cars', ['as' => 'all-cars', 'uses' => 'CarsController@index']);
